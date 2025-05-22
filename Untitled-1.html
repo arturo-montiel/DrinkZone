@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DrinkZone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .fade-delay-1 { animation-delay: 0.2s; }
+    .fade-delay-2 { animation-delay: 0.4s; }
+    .fade-delay-3 { animation-delay: 0.6s; }
+
+    .pantalla-bienvenida {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1e1e1e;
+    }
+
+    .contenedor-formulario {
+      background-color: #292929;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+      text-align: center;
+      transform: perspective(1000px) rotateX(5deg);
+    }
+
+    .contenedor-formulario h1 {
+      margin-bottom: 20px;
+      color: #00ff66;
+    }
+
+    .contenedor-formulario input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background-color: #1a1a1a;
+      color: #00ff66;
+      font-size: 16px;
+      box-shadow: inset 0 0 10px #00ff66;
+    }
+
+    button,
+    .nav-links a {
+      padding: 10px 20px;
+      background: linear-gradient(to bottom, #00ff66, #00cc55);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px #008f44, inset 0 -3px 0 rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    button:hover,
+    .nav-links a:hover {
+      background: linear-gradient(to bottom, #00ff88, #00cc66);
+      transform: translateY(-2px);
+    }
+
+    button:active,
+    .nav-links a:active {
+      transform: translateY(2px);
+    }
+
+    .menu {
+      background-color: #000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00ff66;
+    }
+
+    .nav-links a {
+      margin: 0 10px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(to bottom, #25d366, #1ebf5c);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px #128c53, inset 0 -4px 0 rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background: linear-gradient(to bottom, #3be779, #25d366);
+      transform: translateY(-2px);
+    }
+
+    .contenido {
+      display: none;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .carrusel {
+      display: flex;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .carrusel img {
+      min-width: 100%;
+      object-fit: cover;
+      animation: slide 20s infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      75% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .secciones {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .cuadro {
+      background-color: #1e1e1e;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 100, 0.4);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .cuadro h3 {
+      color: #00ff88;
+      margin-bottom: 10px;
+    }
+
+    .cuadro p {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de bienvenida -->
+  <div class="pantalla-bienvenida" id="pantallaBienvenida">
+    <div class="contenedor-formulario fade-in">
+      <h1>Bienvenido a DrinkZone</h1>
+      <form id="formBienvenida">
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellido" required>
+        <input type="tel" placeholder="Teléfono" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Menú principal -->
+  <div class="menu" id="menu" style="display: none;">
+    <div class="logo">DrinkZone</div>
+    <div class="nav-links">
+      <a href="TIENDA.html">Inicio</a>
+      <a href="pelu.html">Secciones</a>
+      <a href="mapa.html">Contacto</a>
+    </div>
+  </div>
+
+  <!-- Carrusel -->
+  <div class="carrusel" id="carrusel" style="display: none;">
+    <img src="bebidas 10.jpg" alt="Trago 1">
+    <img src="bebidas 11.jpg" alt="Trago 2">
+    <img src="bebidas 12.jpg" alt="Trago 3">
+  </div>
+
+  <!-- Contenido -->
+  <div class="contenido" id="contenido">
+    <div class="secciones" id="secciones">
+      <div class="cuadro">
+        <h3>Misión</h3>
+        <p>Ofrecer las mejores bebidas con calidad, frescura y buen precio.</p>
+      </div>
+      <div class="cuadro">
+        <h3>Visión</h3>
+        <p>Ser la tienda líder en tragos preferida por los amantes de las bebidas.</p>
+      </div>
+      <div class="cuadro">
+        <h3>Valores</h3>
+        <p>Compromiso, calidad, responsabilidad y atención al cliente.</p>
+      </div>
+      <div class="cuadro">
+        <h3>Menú de Tragos</h3>
+        <p>Tenemos tragos tradicionales, exóticos, sin alcohol y personalizados.</p>
+      </div>
+      <div class="cuadro">
+        <h3>Promociones</h3>
+        <p>2x1 en mojitos todos los viernes. Happy hour de 19 a 21 hs.</p>
+      </div>
+      <div class="cuadro" id="contacto">
+        <h3>Contacto</h3>
+        <p>Email: arturomontieledu.@gmail.com</p>
+        <p>Teléfono: 0971211003</p>
+        <p>Ubicación: Barrio Boquerón, colegio Sembrador</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/595971211003" class="whatsapp-float" target="_blank" title="Chateá con nosotros" id="whatsapp" style="display: none;">
+    🟢
+  </a>
+
+  <script>
+    document.getElementById('formBienvenida').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      document.getElementById('pantallaBienvenida').style.display = 'none';
+      document.getElementById('menu').style.display = 'flex';
+      document.getElementById('contenido').style.display = 'block';
+      document.getElementById('whatsapp').style.display = 'flex';
+      document.getElementById('carrusel').style.display = 'flex';
+    });
+  </script>
+</body>
+</html>

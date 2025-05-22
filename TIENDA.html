@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DrinkZone - Tragos, Bebidas y Comidas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      background-color: #0f0f0f;
+      padding: 20px;
+      text-align: center;
+      color: #0f0;
+      font-size: 2em;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #0f0;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1c1c1c;
+      border: 1px solid #0f0;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0f0;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-snap-type: x mandatory;
+      padding: 20px;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      scroll-snap-align: center;
+      border-radius: 10px;
+    }
+
+    .contact {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ddd;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .socials {
+      margin-top: 15px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #0f0;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c7e;
+    }
+  </style>
+</head>
+<body>
+
+<header>🍹 DrinkZone - Tragos, Bebidas y Comidas 🍔</header>
+
+<section class="section">
+  <h2>Tragos Especiales</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Mojito - 25.000 Gs</h3>
+      <p>Ron, hierbabuena, lima, azúcar y soda.</p>
+    </div>
+    <div class="card">
+      <h3>Caipirinha - 22.000 Gs</h3>
+      <p>Cachaça, lima, azúcar y hielo.</p>
+    </div>
+    <div class="card">
+      <h3>Sex on the Beach - 30.000 Gs</h3>
+      <p>Vodka, durazno, naranja y granadina.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Tipos de Bebidas</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Sin alcohol</h3>
+      <p>Limonadas, jugos naturales, mocktails - desde 10.000 Gs</p>
+    </div>
+    <div class="card">
+      <h3>Energéticas</h3>
+      <p>Red Bull, Monster, Powerade - desde 12.000 Gs</p>
+    </div>
+    <div class="card">
+      <h3>Alcohólicas</h3>
+      <p>Whisky, ron, vodka, tequila, ginebra - desde 20.000 Gs</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Menú de Comidas</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Hamburguesa Clásica - 28.000 Gs</h3>
+      <p>Carne jugosa, cheddar, lechuga, tomate y papas.</p>
+    </div>
+    <div class="card">
+      <h3>Pizza Napolitana - 45.000 Gs</h3>
+      <p>Tomate, mozzarella, orégano y aceitunas.</p>
+    </div>
+    <div class="card">
+      <h3>Picada Completa - 60.000 Gs</h3>
+      <p>Quesos, embutidos, aceitunas y pan artesanal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Galería de Momentos</h2>
+  <div class="carousel">
+    <img src="bebidas 16.jpg" alt="Trago">
+    <img src="comida.webp" alt="Comida">
+    <img src="ambiente.jpg" alt="Ambiente">
+    <img src="pizzas.webp" alt="Pizza">
+    <img src="cerveza.jpg" alt="Cerveza">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contacto</h2>
+  <div class="contact">
+    <p>📧 Correo: arturomontieledu.@gmail.com</p>
+    <p>📞 Teléfono: 0971 211 003</p>
+    <p>📍 Ubicación: Barrio Boquerón, Colegio Sembrador</p>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.2934346986725!2d-57.62509782534401!3d-25.28658687763162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dce60147a9d37%3A0xe3c963a7f5eb3e5f!2sColegio%20Sembrador!5e0!3m2!1ses-419!2spy!4v1684563227333"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank">📘</a>
+      <a href="https://instagram.com" target="_blank">📷</a>
+      <a href="https://tiktok.com" target="_blank">🎵</a>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/595971211003" class="whatsapp-float" target="_blank">💬</a>
+
+</body>
+</html>
